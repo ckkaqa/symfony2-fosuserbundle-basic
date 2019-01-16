@@ -39,6 +39,25 @@
                     <a href="https://symfony.com/doc/{{ constant('Symfony\\Component\\HttpKernel\\Kernel::VERSION')[:3] }}/page_creation.html">
                         How to create your first page in Symfony
                     </a>
+
+                    <br/>
+                    <a href="{{ app.request.uri }}connect/github">
+                        Login with Github 
+                    </a>
+
+                    <a href="{{ app.request.uri }}connect/stackexchange">
+                        Login with Stack Exchange 
+                    </a>
+
+                    <a href="{{ app.request.uri }}connect/facebook">
+                        Login with Facebook 
+                    </a>
+
+                    <a href="{{ app.request.uri }}connect/googleplus">
+                        Login with Google+ 
+                    </a>
+
+
                 </p>
             </div>
 
