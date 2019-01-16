@@ -10,6 +10,9 @@ security:
         fos_userbundle:
             id: fos_user.user_provider.username
 
+        hwi:
+            id: hwi_oauth.user.provider    
+
     firewalls:
         main:
             pattern: ^/
@@ -36,7 +39,9 @@ security:
                 failure_path:   /login
                 # Inject a service that will be created in the step #6
                 oauth_user_provider:
-                    service: app.fos_user.oauth_provider
+                    service: hwi_oauth.user.provider.entity
+                    # service: app.fos_user.oauth_provider
+            anonymous: ~
 
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
