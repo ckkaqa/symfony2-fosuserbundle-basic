@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Samples list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for sample in samples %}
+            <tr>
+                <td><a href="{{ path('sample_show', { 'id': sample.id }) }}">{{ sample.id }}</a></td>
+                <td>{{ sample.title }}</td>
+                <td>{{ sample.author }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('sample_show', { 'id': sample.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('sample_edit', { 'id': sample.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('sample_new') }}">Create a new sample</a>
+        </li>
+    </ul>
+{% endblock %}

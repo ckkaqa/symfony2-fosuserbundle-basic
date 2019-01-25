@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Sample</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ sample.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ sample.title }}</td>
+            </tr>
+            <tr>
+                <th>Author</th>
+                <td>{{ sample.author }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('sample_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('sample_edit', { 'id': sample.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
